@@ -12,7 +12,7 @@ def isprime(n):
 # The only exception is that the next time the function is called, 
 # it will continue execution AFTER the previously invoked yield statement (n += 1, in this case).
 
-# so primes() becomes an iterator/generator function that can be used in a loop 
+# so primes() becomes an iterator/generator function that is suitable for a for-loop 
 # to iterate through a list of values
 
 def primes(n = 1):
