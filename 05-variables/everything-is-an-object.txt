@@ -1,0 +1,46 @@
+1. Everything in Python is an object:
+    Variables, functions, even code
+
+2. Every object has an ID, Type and Value.
+    ID uniquely identifies a particular instance of an object.
+        - Cannot change for the life of the object.
+
+    Type identifies the class of an object
+        - Cannot change for the life of the object.
+
+    Value is the contents of the object
+        - Mutable objects can change value, immutable objects cannot
+
+>>> x = 42
+
+>>> x
+42
+
+>>> id(x)
+140161349637120
+
+>>> type(x)
+<class 'int'>
+
+3. All variables in Python are first class objects
+    - What looks like a simple variable may be something more complex
+        v = some_object()
+        print(v)
+        v.attrib = 'string'
+
+4. Mutable vs. immutable objects
+
+Fundamental types like numbers, strings, tuples are immutable objects.
+Lists, dictionaries and other objects are mutable. 
+
+>>> x = 42
+>>> x
+42
+>>> id(x)
+140161349637120     <--- INITIALLY REFERS TO THIS OBJECT
+
+>>> x = 43          <--- ASSIGN x A NEW VALUE
+>>> id(x)
+140161349637152     <--- NOW x REFERS TO A DIFFERENT OBJECT!
+
+
