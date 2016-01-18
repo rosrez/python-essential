@@ -1,0 +1,8 @@
+@@
+1. SYNTAX
+
+x = (1, 2, 3)
+
+creates a tuple with 3 values. A tuple is an immutable object. It is faster than a list and can substitute a list in most cases.
+
+

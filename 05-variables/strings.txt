@@ -1,0 +1,45 @@
+@@
+1. STRINGS SYNTAX
+
+Strings are created with single or double quotes. Strings are immutable objects.
+
+@@
+2. SPECIAL CHARACTES
+
+Use backslash to insert special characters (like \n, \r, etc.) into a string.
+
+@@
+3. RAW STRINGS
+
+If you need Python to treat every character in a string literally (i.e. treat backslashes as themselves, etc.), you just need the r modifier before the string contstant, like this one:
+
+raw_string = r"This is a raw \nstring!"
+
+@@
+4. VARIABLE FORMATTING - PYTHON 3 WAY
+
+    # Python 3 way
+    n = 42
+    s = "This is a {} string!".format(n)
+
+@@
+5. VARIABLE FORMATTIGN - PYTHON 2 WAY
+
+    # Pytnon 2 way
+    n = 43
+    s = "This is a %s string!" % n
+
+@@
+6. TRIPLE QUOTES - MULTILINE STRINGS
+
+A string in triple quotes can span multiple lines and preserve formatting from the script file when displayed.
+
+    #      V - THE BACKSLASH ESCAPES THE NEWLINE CHARACTER SO IT DOESN'T APPEAR AT THE BEGINNING OF OUTPUT
+    s = '''\
+This is a string that can span several lines:
+Line after line
+after line
+of text and more text.'''
+
+
+

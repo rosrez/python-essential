@@ -1,0 +1,20 @@
+@@
+1. BASIC SYNTAX
+
+This defines a dictionaries
+
+d = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5}
+      ^^^   ^
+       |    |
+     KEY   VALUE
+
+We can iterate through keys in a dictionary like this:
+
+    for k in d:
+        print(k, d[k])      # Prints a key along with the value for the key
+
+The keys are iterated through in no particular order.
+
+In order to sort the keys, we could use the sorted() function:
+
+

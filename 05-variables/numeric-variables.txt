@@ -1,0 +1,62 @@
+@@
+1. INTEGER AND FLOAT TYPES
+
+>>> num = 42
+>>> print(type(num),num)
+<class 'int'> 42
+
+>>> num = 42.0
+>>> print(type(num),num)
+<class 'float'> 42.0
+
+@@
+2. INTEGER DIVISION NORMALLY RESULTS IN A FLOAT:
+
+>>> num = 42 / 9
+>>> print(type(num), num)
+<class 'float'> 4.666666666666667
+
+To alter this behaviour, two slashes can be used:
+
+>>> num = 42 // 9
+>>> print(type(num), num)
+<class 'int'> 4             <--- ROUNDED DOWN TI THE NEXT INTEGER
+
+To round the result up, use the round() function:
+
+>>> num = round(42 / 9)     <--- A SINGLE ARGUMENT TO ROUND, WILL ROUND UP TO THE NEXT INTEGER
+>>> print(type(num), num)
+<class 'int'> 5             <--- PRODUCES INTEGER TYPE
+
+We can specify the number of decimal places we want to round to:
+
+>>> num = round(42 / 9, 2)      <--- TWO DECIMAL PLACES
+>>> print(type(num), num)
+<class 'float'> 4.67            <--- RESULTS IN A FLOAT TYPE
+
+@@
+3. CONVERSION BETWEEN NUMERIC TYPES
+
+FLOAT TO INTEGER
+
+>>> num = int(42.9)             <--- CALLS THE int CLASS'S CONSTRUCTOR
+>>> print(type(num), num)
+<class 'int'> 42
+
+INTEGER TO FLOAT
+
+>>> num = float(42)             <--- CALLS THE float CLASS'S CONSTRUCTOR
+>>> print(type(num), num)
+<class 'float'> 42.0
+
+@@
+4. MODULO: % SIGN
+
+>>> 42 % 9
+6
+
+
+
+
+
+

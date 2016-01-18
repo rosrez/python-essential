@@ -1,0 +1,49 @@
+@@
+1. EACH OBJECT HAS ITS UNIQUE ID
+
+>>> x = 42
+>>> x
+42
+>>> id(x)
+140594005496832
+
+@@
+2. IMMUTABLE OBJECTS WITH IDENTICAL VALUES HAVE IDENTICAL IDS
+
+In other words, variables that refer to immutable objects with identical values point to the same object.
+
+>>> x = 42
+>>> id(x)
+140594005496832
+
+>>> id(n)
+140594005496832
+
+>>> id(x) == id(n)
+True
+
+>>> x is n
+True
+
+@@
+3. IT FOLLOWS FROM THE ABOVE THAT THE is OPERATOR COMPARES OBJECT IDS OF ITS VARIABLES
+
+@@
+4. IDS AND MUTABLE OBJECTS
+
+If we create mutable objects with identical contents, their IDs will be different.
+
+>>> x = dict( x = 42 )
+>>> y = dict ( x = 42 )
+
+>>> id(x)
+140594006039240         <----\
+>>> id(y)                    |- DIFFERENT IDS
+140594006039304         <----/
+
+>>> x == y              <--- THE DICTIONARIES EVEN PASS THE TEST FOR EQUALITY (I.E. THE CONTENTS ARE IDENTICAL)
+True
+
+>>> x is y              <--- BUT STILL, THESE ARE DIFFERENT OBJECTS!
+False
+
