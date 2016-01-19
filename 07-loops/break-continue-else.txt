@@ -1,0 +1,40 @@
+@@
+1. CONTINUE - SKIP TO THE BEGINNING OF THE LOOP SUITE
+
+    s = 'this is a string'
+    for c in s:
+        # skip the letter 's'
+        if c == 's': continue
+        print(c, end='')
+
+
+@@
+2. BREAK - BREAK OUT OF THE LOOP PREMATURELY.
+
+    for c in s:
+        # break out of the loop at the letter 's'
+        if c == 's': break
+        print(c, end='')
+
+@@
+3. ELSE - END OF ITERATION
+
+The else suite below gets invoked after the iteration is over (or if it didn't start at all).
+
+    print("Use else")
+    for c in s:
+        print(c, end='')
+    else:
+        print('<< iteration is over')
+
+@@
+4. BREAK-CONTINUE-ELSE WORK IN WHILE-LOOPS AS WELL
+
+    print("Use else with a while loop")
+    i = 0
+    while (i < len(s)):
+        print(s[i], end='')
+        i += 1
+    else:
+        print('<< iteration is over')
+

@@ -1,0 +1,19 @@
+@@
+1. THERE IS NO SWITCH CONSTRUCT IN PYTHON
+
+Most of the time, we can perform the same task using a dictionary and select a value based on a key.
+
+    choices = dict(
+        one = 'first',
+        two = 'second',
+        three = 'third',
+        four = 'fourth',
+        five = 'fifth'
+    )
+    v = 'three'
+    print(choices[v])
+
+In order to mimic the default clause, we use the get() method of a dictionary object:
+
+    v = 'seven'                         <--- NO SUCH KEY IN OUR DICTIONARIES, INDEXING WILL RESULT IN AN ERROR
+    print(choices.get(v, 'other'))      <--- USE get() TO PREVENT THE ERROR

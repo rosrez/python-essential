@@ -1,0 +1,29 @@
+@@
+1. A FOR-LOOP REQUORES AN ITERATOR TO STEP THROUGH
+
+An iterator can be a function like range(), fh.readlines(), etc.
+
+Also, every container type, including strings, is an iterator.
+
+     # tuple
+    t = (1, 2, 3, 4, 5)
+    print("tuple")
+    for i in t:
+        print(i, end=' ')
+    print()
+
+@@
+2. enumerate() i- PROVIDING INDEX TO A FOR-LOOP 
+
+This prints the next item along with its index. We iterate through the lines of a file and through characters of a string.
+
+def main():
+    fh = open("lines.txt")
+    # enumerate produces two elements: the index and the value
+    for index, line in enumerate(fh.readlines()):
+        print(index, line, end='')
+
+    s = 'this is a string'
+    for i, c in enumerate(s):
+        print(i, c)
+
