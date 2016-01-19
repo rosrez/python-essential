@@ -1,0 +1,70 @@
+@@
+1. BASIC SYNTAX
+
+>>> 5 < 6
+True
+>>> 6 < 5
+False
+
+>>> 5 <= 6
+True
+>>> 5 <= 5
+True
+
+>>> 6 >= 5
+True
+>>> 6 >= 6
+True
+>>> 6 >= 7
+False
+
+>>> 5 == 5
+True
+>>> 5 == 6
+False
+
+>>> 6 != 7
+True
+>>> 6 != 6
+False
+
+@@
+2. ID COMPARISON: IS/IS NOT
+
+>>> x, y = 5, 6
+>>> id(x)
+139886316343136
+>>> id(5)
+139886316343136
+>>> x is y
+False
+>>> x is not y
+True
+
+Now assign y an identical value as x.
+Notice that y's ID now becomes identical to x's.
+
+>>> y = 5
+>>> id(y)
+139886316343136
+
+Now the test for identical ID succeeds:
+
+>>> x is y
+True
+
+This works because for immutable objects in Python, an identical value always means an identical ID.
+
+If we now take mutable objects (lists) with identical values, the test for equality succeeds 
+but the test for identical IDs does not:
+
+>>> x, y = [5], [5]
+>>> id(x)
+139886316881736
+>>> id(y)
+139886316881352
+>>> x == y
+True
+>>> x is y
+False
+

@@ -1,0 +1,54 @@
+@@
+1. THE re MODULE
+
+Regular expression support in Python comes with the 're' module. The basic usage patern is:
+
+import re
+
+pattern = re.compile(r'\d\d\d')
+                     ^    --- NOTE THE RAW STRING MODIFIER - WE NEED LITERAL INPUT TO compile()
+
+if re.search(pattern, line): print("found 3 digits")
+
+@@
+2. SEARCH VS MATCH
+
+Search just tells our script that a match occurred in the line
+
+def main():
+    fh = open('raven.txt')
+    for line in fh:
+        if re.search('(Len|Neverm)ore', line):
+            # print matchin lines
+            print(line, end='')
+
+
+If we want to actually capture the matching text, we need to use the re.match() function 
+that returns an object that represents the match. In this case, we could test for the match as simple as this:
+
+if match:
+
+This script prints the matching words from the input file:
+
+def main():
+    fh = open('raven.txt')
+    for line in fh:
+        # this captures our match
+        match = re.search('(Len|Neverm)ore', line)
+        # we can test the match for non-emptiness like this
+        if match:
+            # and here we print the matching part of the string 
+            print(match.group())
+
+@@
+3. SEARCH AND REPLACE
+
+We can use re.sub() to search for a regular expression and replace matching parts of a string. The arguments to sub are:
+
+# sub(pattern, replacement, where)
+
+pattern:     is a regular expression
+replacement: is the string that will replace matches
+where:       is the string where which we are searching for matches
+
+

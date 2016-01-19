@@ -1,0 +1,23 @@
+@@
+1. BASIC SYNTAX
+
+and
+or
+
+are the boolean operators.
+
+EXAMPLE
+
+>>> a, b = 0, 1
+>>> x, y = 'zero', 'one'
+
+if a < b and x < y: print('yes')
+... else: print('no')
+... 
+no
+
+>>> if a < b or x < y: print('yes')
+... else: print('no')
+... 
+yes
+

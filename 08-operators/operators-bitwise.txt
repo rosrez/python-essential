@@ -1,0 +1,56 @@
+@@
+1. BASIC SYNTAX
+
+First, we define a function to print 8 binary places of a value.
+
+>>> def b(n): print('{:08b}'.format(n))
+...             <--- PRESS ENTER HERE
+
+Test our function
+
+>>> b(5)
+00000101
+
+Now, define a couple of values.
+
+>>> x, y = 0x55, 0xaa
+
+Their binary representation is:
+
+>>> b(x)
+01010101
+
+>>> b(y)
+10101010
+
+Now, we try the various bitwise operators.
+
+OR - |
+
+>>> b(x | y)
+11111111
+
+AND - &
+
+>>> b(x & y)
+00000000
+
+XOR - ^
+
+>>> b(x ^ 0)
+01010101
+
+SHIFT LEFT <<
+
+>>> b(x << 4)
+10101010000
+
+SHIFT RIGHT >>
+
+>>> b(x >> 4)
+00000101
+
+NOT (1's COMPLEMENT) - ~
+
+>>> b(~x)
+-1010110
