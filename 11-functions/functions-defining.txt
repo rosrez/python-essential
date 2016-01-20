@@ -1,0 +1,80 @@
+@@
+1. CALLING main() FROM THE END OF THE MODULE
+
+This construct is used to call the main function from the end of the module.
+
+if __name__ == "__main__": main()
+
+By the time the main() function gets called, the interpreter will have read all other function definitions in the module. So this prevents errors when function a() calls function b(), but function b() is defined below function a().
+
+Another effect of this particular 'if' construct is that main() gets called only if the module is run explicitly and not imported.
+
+@@
+2. The pass KEYWORD
+
+Whenever we need to define a stub or no-op function, we can use the 'pass' keword to make it syntactically correct. The reason is that Python treats functions with no body as a syntax error.
+
+EXAMPLE
+
+def stubfunc():
+    pass
+
+@@
+3. OPTIONAL PARAMETERS
+
+To employ optional parameters for a function, we need to specify their default values.
+
+NOTE: All optional parameters must appear after regular parameters in function definitions. Specifying a regular parameter after an optional parameter is a syntax error.
+
+EXAMPLE
+
+Here, 'another' and 'onemore' are optional parameters:
+
+def testfunc(number, another = 43, onemore = 75):
+    print('This is a test function', number, another, onemore)
+
+Invocations of the functions with different number of parameters have this effect:
+
+    testfunc(42)
+    testfunc(42, 16)
+    testfunc(42, 16, 36)
+
+This is a test function 42 43 75
+This is a test function 42 16 75
+This is a test function 42 16 36
+
+@@
+4. OPTIONAL PARAMETERS - NONE VALUES
+
+We can also assign a None value to an optional parameter in a function definition, like this:
+
+def testfunc2(number, another = None, onemore = 75):
+    print('This is test function 2', number, another, onemore)
+
+This produces the following result:
+
+This is test function 2 42 None 75
+This is test function 2 42 16 75
+
+@@
+5. TESTING FOR None VALUES
+
+None is a singleton object so its ID is unique and can be tested with 'is':
+
+if another is None:
+
+EXAMPLE
+
+def testfunc3(number, another = None, onemore = 75):
+    if another is None:
+        another = 112
+    print('This is test function 3:', number, another, onemore)
+
+    testfunc3(42)
+    testfunc3(42, 16)
+
+This has the following effect:
+
+This is test function 3 42 112 75
+This is test function 3 42 16 75
+

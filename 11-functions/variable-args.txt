@@ -1,0 +1,19 @@
+@@
+1. SYNTAX
+
+A function with a variable number of optional arguments is defined like this.
+
+def main():
+    testfunc(1, 2, 3, 42, 43, 45, 46)
+
+    #                               VVVVVV --- OPTIONAL ARGUMENTS
+    def testfunc(this, that, other, *args):
+        print(this, that, other, args)
+
+The result is:
+
+$ python3 functions-variable-args.py 
+1 2 3 (42, 43, 45, 46)
+      ^^^^^^^^^^^^^^^  - ALL OPTIONAL ARGUMENTS ARE COMBINED IN A TUPLE.
+
+Since optional arguments get stored in a tuple, we can iterate through them.

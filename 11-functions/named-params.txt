@@ -1,0 +1,40 @@
+@@
+1. SYNTAX
+
+Sometimes, when calling a function, we might need to supply arguments to the function by name.
+
+The syntax to do so is the following:
+
+    testfunc(one = 1, two = 2, four = 42)
+
+def testfunc(**kwargs):
+    print(kwargs)  # args is a dictionary
+    print("Displaying individual arguments")
+    print(kwargs['one'], kwargs['two'], kwargs['four'])
+
+** KW-args stands for 'keyword arguments'. Keyword arguments are stored in a dictionary.
+The resulting output is:
+
+$ python3 named-params.py 
+{'one': 1, 'two': 2, 'four': 42}
+Displaying individual arguments
+1 2 42
+
+@@
+2. COMBINING POSITIONAL, OPTIONAL AND NAMED ARGUMENTS
+
+This function combines all three types of arguments: positional, optional and named:
+
+def testfunc2(this, that, other, *args, **kwargs):
+    print("In testfunc2()")
+    print("Regular arguments:", this, that, other)                              <--- POSITIONAL ARGUMENTS
+    print("Optional arguments as a tuple:", args)                               <--- OPTIONAL ARGUMENTS (TUPLE)
+    print("Keyword arguments:", kwargs['one'], kwargs['two'], kwargs['four'])   <--- KEYWORD ARGUMENTS
+
+NOTE: The only restriction that the positional, optional and keyword arguments must appear in this exact order in the function definition.
+
+@@
+3. ORDER OF OPTIONAL (TUPLE)/KEYWORD (DICTIONARY) ARGUMENTS
+
+Keyword arguments come in no particular order, just as normal dictionaries.
+Tuple arguments preserve the order specified in the function call so we can iterate through them in that exact order.
