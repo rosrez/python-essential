@@ -1,0 +1,113 @@
+@@
+1. SEQUENCE OPERATIONS
+
+These apply to both tuples and lists.
+
+>>> t = tuple(range(25))
+>>> t
+(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24)
+
+@@ 
+IN/NOT IN
+
+>>> 10 in t
+True
+>>> 50 in t
+False
+>>> 50 not in t
+True
+
+@@
+ITERATING
+
+>>> for i in t: print(i, end = ' ')
+... 
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 >>>
+
+@@ 
+COUNT ELEMENTS WITH A SPECIFIC VALUE
+
+>>> t.count(5)
+1
+
+@@ 
+RETURN THE FIRST INDEX WITH A SPECIFIC VALUE
+
+>>> t.index(5)
+5
+
+@@
+2. LISTS -- APPEND AND EXTEND
+
+x
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+>>> x.append(100)
+>>> x
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 100]
+
+Append appends just a single item at the end of the list. If we need to add more objects at a time, we can use the extend() method:
+
+>>> x.extend(range(20))
+>>> x
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 100, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+>>> 
+
+extend() takes an iterable object and adds its contents to the list.
+
+@@
+3. LISTS -- INSERT
+
+>>> x.insert(12, 100)
+>>> x
+                                       VVV --- INSERTED VALUE AT POSITION 12
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 100, 12, 13, 14, 15, 16, 17, 18, 19, 100, 
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
+@@
+4. LISTS -- DELETE
+
+>>> del x[12]       <-- DELETES ELEMENT WITH INDEX 12 (was 100)
+>>> x
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 100, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
+@@
+5. LISTS -- REMOVE
+
+>>> x.remove(12)    <-- REMOVES THE VALUE 12, WHEREVER IT IS IN THE LIST
+>>> x
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 100, 
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
+@@
+6. LISTS -- POP
+
+Pop returns the element from the end of the list and removes it from the list.
+
+>>> x = list(range(10))
+>>> x
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> x.pop()
+9
+>>> x
+[0, 1, 2, 3, 4, 5, 6, 7, 8]
+>>> x.pop()
+8
+>>> x
+[0, 1, 2, 3, 4, 5, 6, 7]
+>>> x.pop()
+7
+>>> x
+[0, 1, 2, 3, 4, 5, 6]
+
+We can also pop from the beginning of the list (or any other element):
+
+>>> x
+[1, 2, 3, 4, 5, 6]
+>>> x.pop(0)        <--- REMOVES AN ELEMENT FROM THE BEGINNING (POSITION 0)
+1
+>>> x
+[2, 3, 4, 5, 6]
+>>> x.pop(0)        <--- REMOVES AN ELEMENT FROM THE BEGINNING (POSITION 0)
+2
+>>> x
+[3, 4, 5, 6]

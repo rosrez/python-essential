@@ -1,0 +1,50 @@
+@@
+1. LISTS ARE CREATED WITH []
+
+>>> x = [1,2,3,4,5]
+>>> x
+[1, 2, 3, 4, 5]
+>>> type(x)
+<class 'list'>
+
+@@
+2. INDEXING LISTS
+
+As tuples, list indexes are zero-based. As with tuples, index -1 refers to the last element in the list:
+
+>>> x[0]
+1
+>>> x[-1]
+5
+
+@@
+3. COMMON LIST FUNCTIONS
+
+Again, these are similar to tuples:
+
+>>> len(x)      <-- LENGTH
+5
+>>> min(x)      <-- MINIMUM VALUE
+1
+>>> max(x)      <-- MAXIMUM VALUE
+5
+
+@@
+4. INITIALIZING LISTS FROM GENERATOR FUNCTIONS/OBJECTS
+
+    list class constructor
+        VVVV
+>>> x = list(range(25))
+>>> x
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+>>> type(x)
+<class 'list'>
+
+We can also initialize a list from a tuple:
+
+>>> l1 = [5, 6, 7, 8, 9]
+>>> t1 = tuple(l1)
+>>> l1
+[5, 6, 7, 8, 9]
+>>> t1
+(5, 6, 7, 8, 9)

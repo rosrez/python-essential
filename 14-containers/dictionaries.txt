@@ -1,0 +1,107 @@
+@@
+1. BASIC SYNTAX
+
+>>> d = {'one': 1, 'two': 2, 'three': 3}
+>>> d
+{'three': 3, 'two': 2, 'one': 1}
+
+More often, you'll see dictionaries created with the dict class constructor, which takes a list of named arguments.
+
+>>> d = dict(one = 1, two = 2, three = 3)
+>>> d
+{'three': 3, 'one': 1, 'two': 2}
+
+We can even use a dictionary as an input parameter to the dict class constructor, even alongside other named parameters.
+
+Create dictionary x.
+
+>>> x = dict(four = 4, five = 5, six = 6)
+>>> x
+{'six': 6, 'five': 5, 'four': 4}
+
+Create dictionary d out of some named values and dictionary x.
+
+>>> d = dict(one = 1, two = 2, three = 3, **x)                  <-- NOTE THE **x NOTATION
+>>> d
+{'three': 3, 'six': 6, 'five': 5, 'two': 2, 'four': 4, 'one': 1}
+
+@@
+2. IN/NOT IN OPERATOR
+
+>>> x
+{'six': 6, 'five': 5, 'four': 4}
+>>> 'three' in x
+False
+>>> 'four' in x
+True
+>>> 'three' not in x
+True
+
+@@
+3. ITERATING THROUGH DICTIONARY KEYS
+
+Iterating through the keys only:
+
+>>> for k in x: print(k)
+... 
+six
+five
+four
+
+Iterating through keys and values simultaneously (i.e. we get both the key and value in control variables):
+
+>>> for k,v in x.items(): print(k,v)
+... 
+six 6
+five 5
+four 4
+
+@@
+4. GETTING VALUES BASED ON KEYS
+
+Method 1 - subscript
+
+>>> d
+{'three': 3, 'six': 6, 'five': 5, 'two': 2, 'four': 4, 'one': 1}
+>>> d['three']
+3
+
+This method stops working if the given key is not in the dictionary; an attempt to access a value by a non-existent key results in an error:
+
+>>> d['seven']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  KeyError: 'seven'
+
+Method 2 - dict.get()
+
+>>> d.get('three')
+3
+>>> d.get('seven')          <--- OUTPUTS NOTHING, i.e. RETURNS THE 'None' VALUE
+
+>>> d.get('seven') == None
+True
+
+We can also provide a default value for dict.get() to return if the key isn't found in a dictionary.
+
+>>> d.get('ten', 'not found')
+'not found'
+
+@@
+5. DELETING VALUES FROM A DICTIONARY
+
+The 'del' operator is used to delete values from a dictionary.
+
+>>> x
+{'six': 6, 'five': 5, 'four': 4}
+>>> del x['four']
+>>> x
+{'six': 6, 'five': 5}
+
+Alternatively, we can use pop() do return the value and delete it at the same time.
+
+>>> x
+{'six': 6, 'five': 5, 'four': 4}
+>>> x.pop('four')
+4
+

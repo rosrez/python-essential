@@ -1,0 +1,75 @@
+@@
+1. CREATING TUPLES
+
+Tuples are created with the comma operator. You may often see it written this way:
+
+>>> t = (1, 2, 3, 4, 5)
+
+In fact, parentheses are optional and this list can be created like this:
+
+>>> t = 1,2,3,4,5
+>>> t
+(1, 2, 3, 4, 5)
+
+So, parentheses are there just for a improve the way the tuple looks in code.
+
+If we were to create a tuple with just one element, we could try this syntax:
+
+>>> t1 = (1)
+>>> t1
+1
+>>> type(t1)
+<class 'int'>
+
+This does not yield the result we've expected: the resulting type is int, regardless of the parentheses.
+
+The right way to create the tuple is, again, with the comma operator:
+
+>>> t1 = (1,)
+>>> t1
+(1,)
+>>> type(t1)
+<class 'tuple'>
+
+@@
+2. TUPLE INDEXING
+
+Indexes in tuples are zero-based. The last element can be accessed directly by its index or as index -1.
+
+>>> t
+(1, 2, 3, 4, 5)
+
+>>> t[0]
+1
+>>> t[4]
+5
+>>> t[-1]
+5
+
+@@
+3. COMMON TUPLE FUNCTIONS
+
+>>> len(t)      <-- LENGTH
+5
+>>> min(t)      <-- MINIMUM VALUE
+1
+>>> max(t)      <-- MAXIMUM VALUE
+5
+
+@@
+4. INITIALIZING TUPLES FROM GENERATOR FUNCTIONS/OBJECTS
+
+    tuple class constructor
+        VVVV
+>>> t = tuple(range(25))
+>>> t
+(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24)
+
+We can also initialize a tuple from a list:
+
+>>> t2 = [10, 15, 20, 25, 30]
+>>> l2 = list(t2)
+>>> t2
+[10, 15, 20, 25, 30]
+>>> l2
+[10, 15, 20, 25, 30]

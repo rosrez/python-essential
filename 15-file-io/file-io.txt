@@ -1,0 +1,40 @@
+@@
+1. OPENING FILES
+
+We use the open() function to open files. By default, open() opens files in read mode. That is, these two snippets are equivalent:
+
+    f = open('lines.txt')
+
+    AND
+
+    f = open('lines.txt', 'r')
+
+The possible modes are:
+
+r   - Read mode
+r+  - Read & write mode
+w   - Write mode
+a   - Append mode
+
+We can combine the above mode modifiers with text/binary modifiers:
+
+t   - text file
+b   - binary file
+
+For example, we can specify 'rt' or 'wb' as arguments to open().
+
+@@
+2. ITERATING THROUGH FILES
+
+We can iterate through the file using the file object returned by open:
+
+    for line in f:
+        print(line, end = '')
+
+Or, we can use the readlines() method of the file object to achieve the same effect:
+
+    for line in f.readlines():
+        print(line, end = '')
+
+
+

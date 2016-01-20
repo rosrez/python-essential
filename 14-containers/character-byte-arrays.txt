@@ -1,0 +1,6 @@
+@@
+1. BASIC SYNTAX
+
+bytearray() is a useful mutable container of raw bytes. We can append to it, change individual bytes and so on. It suits low-level programming tasks like manipulating individual bytes.
+
+bytes() is a non-mutable array of bytes. Its constructor can take a string as an input, in which case we get a byte representation of the string in the resulting array. This array can be added to a bytearray object to construct a bigger entity out of smaller chunks.
