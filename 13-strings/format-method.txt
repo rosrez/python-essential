@@ -1,0 +1,60 @@
+@@
+1. PYTHON VERSION NOTES
+
+format() was not available in Python 2, it appeared only in Python 3.
+
+The way to format strings in Python 2 was to employ C-like format specifiers and the % operator:
+
+>>> 'this is %d, that is %d' % (a, b)
+'this is 5, that is 42'
+
+This required the programmer to know the type of variables in advance and use a matching format specifier.
+
+format() relies on a repr() method of a given class to produce its string representation. So now, we don't need to know what type the variables are in order to use format().
+
+@@
+2. BASIC SYNTAX
+
+The format() method takes its string and fills in {} placeholders with the method's arguments, like this:
+
+>>> a, b = 5, 42
+>>> 'this is {}, that is {}'.format(a, b)
+'this is 5, that is 42'
+
+Strings are immutable, so the string returned as the result is a new string that is different from the pattern string that 'generated' the result.
+
+@@
+3. THE ORDER OF PARAMETERS
+
+If we use just the {} specifiers, Python will insert parameters in the order you provided them to the format method:
+
+>>> 'this is {}, that is {}'.format(a, b)
+'this is 5, that is 42'
+
+If you need to alter the order of parameters provided to format, you can use positional specifiers {0}, {1} and so on:
+
+>>> 'this is {1}, that is {0}'.format(a, b)
+'this is 42, that is 5'
+
+This latter technique also allows you to output the same value multiple times:
+
+>>> 'this is {1}, that is {0} and this too is {1}'.format(a, b)
+'this is 42, that is 5 and this too is 42'
+
+@@
+4. NAMED PARAMETERS
+
+We can also supply named parameters to format() and refer to them by name in the format specifiers:
+
+>>> 'this is {bob}, that is {fred}'.format(bob = a, fred = b)
+'this is 5, that is 42'
+
+We can even supply a dictionary as a set of input parameters to format():
+
+>>> d = dict(bob = 15, fred = 60)
+>>> d
+{'fred': 60, 'bob': 15}
+>>> 'this is {bob}, that is {fred}'.format(**d)     <--- NOTE THE **d NOTATION
+'this is 15, that is 60'
+
+

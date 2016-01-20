@@ -1,0 +1,107 @@
+@@
+1. CAPITALIZE
+>>> s
+'this is a string'
+>>> s.capitalize()
+'This is a string'      <-- CAPITALIZED ONLY THE FIRST CHARACTER
+
+
+@@
+2. TURN TO UPPER CASE
+
+>>> 'This is a string'.upper()
+'THIS IS A STRING'
+
+@@
+3. TURN TO LOWER CASE
+
+>>> 'THIS IS A STRING'.lower()
+'this is a string'
+
+@@
+4. SWAP CASE
+
+>>> 'This is a string'.swapcase()
+'tHIS IS A STRING'
+
+@@
+5. FIND A SUBSTRING
+
+>>> s
+'this is a string'
+   ^^       --- THIS PORTION AT INDEX 2 IS FOUND BY find() BELOW
+
+>>> s.find('is')
+2
+
+@@
+6. REPLACE A SUBSTRING IN A STRING
+
+>>> 'this is a string'.replace('this', 'that')
+'that is a string'
+
+@@
+7. STRIP A SEQUENCE OF CHARACTERS FROM A STRING
+
+By default, strip() strips whitespace from the beginning and end of a string:
+
+>>> s = ' This is a string '
+>>> print("[" + s + "]")
+[ This is a string ]
+>>> print("[" + s.strip() + "]")
+[This is a string]
+
+NOTE:
+Invoking strip() without arguments is very commonly used to remove trailing newlines (when processing text files), but you have to be aware that strip() will also remove any LEADING WHITESPACE from the beginning of a string.
+
+@@
+8. rstrip() -- REMOVE WHITESPACE FROM THE END OF A STRING
+
+>>> '   This is a string   '.strip()
+'This is a string'                      <--- REMOVES BOTH LEADING AND TRAILING WHITESPACE
+>>> '   This is a string   '.rstrip()
+'   This is a string'                   <--- REMOVES JUST THE TRAILING WHITESPACE
+
+@@
+9. REMOVING TRAILING NEWLINE FROM A STRING (rstrip())
+
+We need to invoke rstring('\n') to remove only the trailing newline(s). 
+
+>>> s1 = '   This is a string  \n'
+>>> s1.strip()
+'This is a string'                      <--- REMOVES THE TRAILING NEWLINE, BUT ALSO LEADING AND TRAILING WHITESPACE
+>>> s1.rstrip('\n')
+'   This is a string  '                 <--- REMOVES JUST THE TRAILING NEWLINE
+
+@@
+10. isalnum() -- IS THE STRING ALPHANUMERIC?
+
+isalnum() method can be used to test if the string contains only alphanumeric characters.
+
+>>> 'This is a string'.isalnum() 
+False                                   <--- FALSE, SINCE THE STRING CONTAINS SPACES (NON-ALPHANUMERIC)
+
+>>> 'Thisisastring'.isalnum() 
+True                                    <--- TRUE, ONLY ALPHANUMERIC CHARACTERS THIS TIME
+
+@@
+11.isalpha() -- DOES THE STRING CONTAIN ONLY ALPHABETICAL CHARACTERS?
+
+>>> 'Thisisastring'.isalpha() 
+True
+
+@@
+12. isdigit() -- DOES THE STRING CONTAIN ONLY DIGITS?
+
+>>> 'Thisisastring'.isdigit() 
+False
+>>> '12345'.isdigit() 
+True
+
+@@
+13. isprintable() -- DOES THE STRING CONTAIN ONLY PRINTABLE CHARACTERS?
+
+>>> 'This is a string\n'.isprintable() 
+False
+>>> 'This is a string'.isprintable() 
+True

@@ -1,0 +1,33 @@
+@@
+1. STRINGS ARE OBJECTS
+
+Strings used to be objects in Python 2 but those were not first class objects, as in Python 3. This means that the interfaces have changed a lot between the two versions.
+
+We can invoke methods on string objects, like this:
+
+>>> s = 'This is a string'
+>>> s
+'This is a string'
+>>> s.upper()
+'THIS IS A STRING'
+
+@@
+2. THE format() METHOD
+
+This method is often called on a 'bare' string (i.e. on a string constant), like this:
+
+>>> 'This is a string {}'.format(42)
+'This is a string 42'
+
+NOTE: Older version of Python used to achieve this in a different way:
+
+>>> 'This is a string %s' % 42
+'This is a string 42'
+
+OR
+
+>>> 'This is a string %d' % 42
+'This is a string 42'
+
+This way of formatting strings still works in Python 3, but is considered obsolescent and will be removed in future versions.
+

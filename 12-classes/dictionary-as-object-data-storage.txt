@@ -1,0 +1,48 @@
+#!/bin/python3
+
+# This illustrates a technique commonly used in Python:
+# storing object fields in a dictionary.
+
+class Duck:
+    # the constructor that takes keyword arguments
+    def __init__(self, **kwargs):
+        self.variables = kwargs
+
+    def quack(self):
+        print("Quaaack! - My number is", self.number)
+
+    def walk(self):
+        print("Walks like a duck. My number is", self.number)
+
+    def set_color(self, color):
+        self.variables['color'] = color
+
+    def get_color(self):
+        return self.variables.get('color', None)
+
+    def set_variable(self, k, v):
+        self.variables[k] = v
+
+    def get_variable(self, k):
+        return self.variables.get(k, None)
+
+def main():
+    donald = Duck(feet = 2)
+    print("Donald")
+    print("Color", donald.get_color())
+    print("Number of feet", donald.get_variable('feet'))
+
+    print("-------")
+
+    frank = Duck(color = 'blue')
+    print("Frank")
+    # will print 'blue' - color has been set
+    print("Color", frank.get_color())
+    # will print 'None' - number of feet is not set yet
+    print("Number of feet", frank.get_variable('feet'))
+    # set number of feet
+    frank.set_variable('feet', 2)
+    # print the number of feet again; this time it's 2
+    print("Number of feet", frank.get_variable('feet'))
+
+if __name__ == "__main__": main()

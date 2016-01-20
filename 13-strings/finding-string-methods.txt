@@ -1,0 +1,6 @@
+@@
+1. URL FOR DOCUMENTATION
+
+http://docs.python.org/py3k/library/stdtypes.html
+
+

@@ -1,0 +1,47 @@
+@@
+1. SPLITTING STRINGS -- split()
+
+>>> s = 'This is a string of words'
+>>> s.split()
+['This', 'is', 'a', 'string', 'of', 'words']
+
+As we can see, split() split the string on a whitespace and produced its result as a list.
+
+By default, split() also folds mutliple whitespace:
+
+>>> s = 'This   is  a string of   words'
+>>> s.split()
+['This', 'is', 'a', 'string', 'of', 'words']
+
+so the result is identical to the previous example, even if the input string contained more whitespace.
+
+We can use other tokens to split strings, but that will not fold the split tokens as it does whitespace.
+
+
+>>> words = s.split()
+>>> for w in words: print(w)
+... 
+This
+is
+a
+string
+of
+words
+
+@@
+2. JOINING STRINGS - join()
+
+The join method operates on the delimiter that is used between strings being joined:
+
+>>> s = 'This is a string of words'
+>>> words = s.split()
+>>> words
+['This', 'is', 'a', 'string', 'of', 'words']
+
+>>> new = ":".join(words)           <--- NOTE THAT WE CALL ":".join() where ":" is the delimiter in the resulting string
+>>> new
+'This:is:a:string:of:words'
+
+", ".join(words)
+'This, is, a, string, of, words'
+
